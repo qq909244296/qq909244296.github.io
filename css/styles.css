@@ -28,6 +28,20 @@
   --shadow: 0 18px 40px rgba(70, 48, 20, 0.08);
 }
 
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f4efe6;
+    --bg-soft: #fffaf2;
+    --surface: rgba(255, 250, 242, 0.78);
+    --text: #1c1914;
+    --text-muted: #5f574c;
+    --accent: #9a5b16;
+    --accent-2: #1f7a6b;
+    --line: rgba(28, 25, 20, 0.1);
+    --shadow: 0 18px 40px rgba(70, 48, 20, 0.08);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -247,6 +261,15 @@ a:hover {
   width: 1rem;
   height: 1.5px;
   background: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.menu-btn[aria-expanded="true"] .menu-btn__bar:first-child {
+  transform: translateY(3.2px) rotate(45deg);
+}
+
+.menu-btn[aria-expanded="true"] .menu-btn__bar:last-child {
+  transform: translateY(-3.2px) rotate(-45deg);
 }
 
 .mobile-nav {
@@ -355,7 +378,7 @@ h3 {
 .hero__stage {
   display: grid;
   place-items: center;
-  min-height: 18rem;
+  min-height: 14rem;
 }
 
 .radar {
@@ -375,7 +398,7 @@ h3 {
 
 .radar__ring {
   inset: 8%;
-  border: 1px solid color-mix(in srgb, var(--accent-2) 45%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 62%, transparent);
   border-radius: 50%;
 }
 
@@ -463,11 +486,13 @@ h3 {
 }
 
 .portrait {
-  margin: 0;
-  border-radius: calc(var(--radius) - 4px);
+  margin: 0 auto;
+  width: min(100%, 168px);
+  border-radius: 50%;
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--bg-soft);
+  box-shadow: var(--shadow);
 }
 
 .portrait img {
@@ -515,6 +540,12 @@ h3 {
 .interest-card,
 .project-card {
   padding: 1.35rem 1.3rem 1.25rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
 }
 
 .interest-card ul {
@@ -643,8 +674,12 @@ h3 {
     padding-top: 5rem;
   }
 
+  .hero__stage {
+    min-height: 22rem;
+  }
+
   .about-grid {
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 168px 1fr;
     gap: 2.2rem;
     align-items: start;
   }
@@ -654,12 +689,25 @@ h3 {
   }
 }
 
+@media (max-width: 719px) {
+  .radar {
+    width: min(72vw, 16rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .radar__sweep {
+  .radar__sweep,
+  .project-card,
+  .menu-btn__bar {
     animation: none;
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
   }
 }
