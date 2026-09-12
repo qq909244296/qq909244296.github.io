@@ -1,38 +1,37 @@
 # qq909244296.github.io
 
-这是 GitHub 用户 [qq909244296](https://github.com/qq909244296) 的个人主页仓库。站点是纯静态页面（HTML / CSS / 少量 JavaScript），不需要构建步骤。
+jiawenshi 的个人主页。纯静态 HTML / CSS / 少量 JavaScript，**不需要构建**。
 
 ## 线上地址
 
-用户站点（`*.github.io`）发布后的地址是：
-
 **https://qq909244296.github.io/**
 
-## GitHub Pages 如何提供这个站点
+这是 GitHub **用户站点**（`username.github.io`）。Pages 从 **`main` 分支的仓库根目录**提供文件。根目录的 `index.html` 才是真正的首页。
 
-对 `qq909244296.github.io` 这类**用户站点**，GitHub Pages 默认从 **`main` 分支的仓库根目录**提供文件，而不是 `docs/` 或其他子目录。
+如果 `main` 上只有 README、没有 `index.html`，Pages 会用 Jekyll 把 README 渲染成两行白底文字。那不是这个站点的设计稿。合并本仓库后，应看到带声场视觉的完整个人主页。
 
-也就是说，根目录里的 `index.html` 会成为站点首页。
+## 启用 / 更新 GitHub Pages
 
-### 启用 Pages
+1. 把带 `index.html` 的提交合并进 **`main`**
+2. 仓库 **Settings → Pages**
+3. Source 选择 **Deploy from a branch**
+4. Branch = **`main`**，文件夹 = **`/ (root)`**
+5. 保存后等一两分钟，再打开 https://qq909244296.github.io/
 
-1. 打开仓库 **Settings → Pages**
-2. Build and deployment 的 Source 选择 **Deploy from a branch**
-3. Branch 选择 **`main`**，文件夹选择 **`/ (root)`**
-4. 保存后等待一两分钟，访问 https://qq909244296.github.io/
-
-合并本仓库的更新到 `main` 后，Pages 会再次部署。
+`.nojekyll` 会关闭 Jekyll 主题包装，避免 README 再被当成整站。
 
 ## 本地预览
-
-在仓库根目录启动任意静态服务器即可，例如：
 
 ```bash
 python3 -m http.server 8080
 ```
 
-然后打开 http://localhost:8080/ 。
+打开 http://localhost:8080/ 。
 
 ## 内容说明
 
-页面文案依据公开 GitHub 资料（显示名 jiawenshi、地点南昌、公开仓库主题）撰写，没有编造邮箱、电话、职位、论文或量化指标。精选项目均链到该账号下真实存在的公开仓库。
+- 姓名：jiawenshi
+- 邮箱：jiawshi@126.com
+- GitHub：https://github.com/qq909244296
+- 兴趣按公开仓库主题写：声源定位 / 音频智能 / C++ 系统
+- 没有编造职位、论文、公司或量化指标
