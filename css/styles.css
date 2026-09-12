@@ -9,9 +9,9 @@
   --line: rgba(244, 239, 228, 0.1);
   --glass: rgba(13, 17, 26, 0.72);
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-  --sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", sans-serif;
-  --serif: "Noto Serif SC", "Songti SC", serif;
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --serif: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Songti SC", "Noto Sans SC", system-ui, sans-serif;
+  --mono: "SFMono-Regular", Menlo, Consolas, "Microsoft YaHei Mono", ui-monospace, monospace;
   --wrap: min(1180px, calc(100% - 2rem));
 }
 
