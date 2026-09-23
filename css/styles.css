@@ -63,7 +63,7 @@ a:hover {
 .stage {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 18% 8%, rgba(79, 244, 210, 0.22), transparent 36%),
@@ -147,6 +147,14 @@ a:hover {
   inset: 0;
   opacity: 0.16;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+.top,
+.drawer,
+main,
+.foot {
+  position: relative;
+  z-index: 1;
 }
 
 .top {
@@ -234,11 +242,39 @@ a:hover {
 }
 
 .hero {
+  position: relative;
   min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 18vh 6vw 12vh;
+  overflow: hidden;
+}
+
+.hero__field {
+  position: absolute;
+  width: min(92vw, 38rem);
+  aspect-ratio: 1;
+  right: -8%;
+  top: 4%;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 2.4rem, rgba(79, 244, 210, 0.22) 2.45rem 2.55rem);
+  box-shadow:
+    0 0 80px rgba(79, 244, 210, 0.12),
+    inset 0 0 80px rgba(139, 124, 255, 0.08);
+}
+
+.hero__field::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 180, 90, 0.35);
+  box-shadow: 0 0 0 1px rgba(79, 244, 210, 0.2);
+  animation: spin 14s linear infinite;
+  background: conic-gradient(from 160deg, transparent 0 74%, rgba(79, 244, 210, 0.35), transparent 92%);
 }
 
 .hero__who {
