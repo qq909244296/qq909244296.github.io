@@ -66,9 +66,9 @@ a:hover {
   z-index: -1;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% -10%, rgba(79, 244, 210, 0.14), transparent 42%),
-    radial-gradient(ellipse at 90% 20%, rgba(139, 124, 255, 0.16), transparent 38%),
-    radial-gradient(ellipse at 10% 80%, rgba(255, 180, 90, 0.08), transparent 36%),
+    radial-gradient(ellipse at 18% 8%, rgba(79, 244, 210, 0.22), transparent 36%),
+    radial-gradient(ellipse at 88% 18%, rgba(139, 124, 255, 0.24), transparent 34%),
+    radial-gradient(ellipse at 70% 92%, rgba(255, 180, 90, 0.12), transparent 32%),
     #03040a;
 }
 
@@ -85,7 +85,7 @@ a:hover {
   height: 36rem;
   top: -8rem;
   right: -8rem;
-  background: rgba(79, 244, 210, 0.18);
+  background: rgba(79, 244, 210, 0.32);
 }
 
 .stage__glow--b {
@@ -110,25 +110,24 @@ a:hover {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(239, 232, 220, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(239, 232, 220, 0.04) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(circle at 50% 30%, #000 10%, transparent 72%);
+    linear-gradient(rgba(79, 244, 210, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 244, 210, 0.07) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 70% 20%, #000 8%, transparent 68%);
 }
 
 .stage__sweep {
   position: absolute;
-  width: min(90vw, 54rem);
+  width: min(110vw, 62rem);
   aspect-ratio: 1;
-  left: 50%;
-  top: 8%;
-  transform: translateX(-50%);
+  right: -8%;
+  top: -6%;
   border-radius: 50%;
   background:
-    repeating-radial-gradient(circle at 50% 50%, transparent 0 46px, rgba(79, 244, 210, 0.07) 47px 48px),
-    conic-gradient(from 200deg, transparent 0 72%, rgba(79, 244, 210, 0.16), transparent 90%);
-  animation: spin 22s linear infinite;
-  mask-image: radial-gradient(circle, #000 35%, transparent 70%);
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 38px, rgba(79, 244, 210, 0.16) 39px 40px),
+    conic-gradient(from 200deg, transparent 0 68%, rgba(255, 180, 90, 0.22), rgba(79, 244, 210, 0.28), transparent 88%);
+  animation: spin 18s linear infinite;
+  mask-image: radial-gradient(circle, #000 28%, transparent 72%);
 }
 
 .stage__scan {
@@ -256,12 +255,19 @@ a:hover {
   line-height: 0.86;
   letter-spacing: -0.05em;
   font-weight: 700;
-  text-shadow: 0 0 80px rgba(79, 244, 210, 0.18);
+  background: linear-gradient(180deg, #fff6e8 20%, #c9fff2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 0 36px rgba(79, 244, 210, 0.28));
 }
 
 .hero__line {
   max-width: 34rem;
   margin: 1.8rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(79, 244, 210, 0.28);
   font-size: clamp(1.15rem, 2.4vw, 1.45rem);
   color: var(--dim);
 }
@@ -338,9 +344,9 @@ h3 {
 .track__rune {
   font-size: clamp(3.4rem, 10vw, 6rem);
   line-height: 0.9;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(79, 244, 210, 0.55);
-  text-shadow: 0 0 28px rgba(79, 244, 210, 0.18);
+  color: rgba(79, 244, 210, 0.12);
+  -webkit-text-stroke: 1.4px rgba(79, 244, 210, 0.85);
+  text-shadow: 0 0 28px rgba(79, 244, 210, 0.35);
 }
 
 .track__no {
@@ -400,7 +406,7 @@ h3 {
 
 @keyframes spin {
   to {
-    transform: translateX(-50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
